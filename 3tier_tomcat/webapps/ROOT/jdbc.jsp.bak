@@ -1,0 +1,31 @@
+<%@ page import="java.sql.*" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%
+   Connection conn = null;
+
+   String driver ="oracle.jdbc.driver.OracleDriver";
+   String url = "jdbc:oracle:thin:@192.168.151.223:1521:source";
+   
+   Boolean connect = false;
+   
+   try {
+      //DriverManagerr 객체 생성, 등록
+      Class.forName(driver);
+      
+      //오라클 계정 id, 비밀번호 입력
+      conn = DriverManager.getConnection(url, "user", "password");
+      
+      connect = true;
+      conn.close();
+      
+   } catch(Exception e) {
+      connect = false;
+      e.printStackTrace();
+   }
+%>
+....
+<% if(connect = true) { %>
+   <h3>연결되었습니다.</h3>
+<% } else { %>
+   <h3>연결에 실패했습니다.</h3>
+<% } %>

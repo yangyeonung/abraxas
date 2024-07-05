@@ -1,0 +1,66 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page import="java.sql.*" %>
+<%@ page import="javax.naming.*, javax.sql.*" %>
+
+<%
+    // 세션 시작
+    session = request.getSession();
+
+    // 데이터베이스 연결 정보
+    String db_username = "abraxas"; // 데이터베이스 사용자 이름
+    String db_password = "2076063678"; // 데이터베이스 비밀번호
+    String db_url = "jdbc:oracle:thin:@192.168.151.223:1521:source"; // 데이터베이스 URL
+
+    // POST 요청으로부터 입력 받기
+    String pw1 = request.getParameter("user_pw1");
+    String pw2 = request.getParameter("user_pw2");
+    String age = request.getParameter("age");
+    String nick = request.getParameter("nick");
+    String email = request.getParameter("email");
+
+    // 데이터베이스 연결 및 쿼리 실행
+    Connection conn = null;
+    PreparedStatement pstmt = null;
+    ResultSet rs = null;
+
+    try {
+        // 오라클 데이터베이스 연결
+        Class.forName("oracle.jdbc.driver.OracleDriver");
+        conn = DriverManager.getConnection(db_url, db_username, db_password);
+
+        // 쿼리 작성
+        String strSQL = "update member set nickname=?";
+
+        if(pw1 != null && !pw1.isEmpty()) strSQL += ", u_pass=?";
+        if(age != null && !age.isEmpty()) strSQL += ", age=?";
+        if(email != null && !email.isEmpty()) strSQL += ", email=?";
+
+        strSQL += " where u_id=?";
+
+        // 쿼리 실행
+        pstmt = conn.prepareStatement(strSQL);
+        int parameterIndex = 1;
+        pstmt.setString(parameterIndex++, nick);
+        if(pw1 != null && !pw1.isEmpty()) pstmt.setString(parameterIndex++, pw1);
+        if(age != null && !age.isEmpty()) pstmt.setInt(parameterIndex++, Integer.parseInt(age));
+        if(email != null && !email.isEmpty()) pstmt.setString(parameterIndex++, email);
+        pstmt.setString(parameterIndex, (String)session.getAttribute("user_id"));
+        int result = pstmt.executeUpdate();
+
+        // 결과 확인 및 리다이렉션
+        if(result > 0){
+            session.setAttribute("nickname", nick);
+            response.sendRedirect("member_info.jsp?ch=1");
+        } else {
+            response.sendRedirect("member_info.jsp?ch=2");
+        }
+    } catch(Exception e) {
+        e.printStackTrace();
+    } finally {
+        // 자원 해제
+        try { if(rs != null) rs.close(); } catch(Exception e) {}
+        try { if(pstmt != null) pstmt.close(); } catch(Exception e) {}
+        try { if(conn != null) conn.close(); } catch(Exception e) {}
+    }
+%>
+

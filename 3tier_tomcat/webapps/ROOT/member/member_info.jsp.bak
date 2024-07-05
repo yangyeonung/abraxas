@@ -1,0 +1,131 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+
+<!doctype html>
+<html>
+<head>
+    <title>회원 정보</title>
+    <link rel="stylesheet" href="../style_contents.css" type="text/css">
+    <script>
+        function ck(){
+            if(!document.mform.user_pw1.value == "" && (document.mform.user_pw1.value.length < 6 || document.mform.user_pw1.value.length > 20)){
+                alert("비밀번호를 다시 입력하세요.");
+                mform.user_pw1.focus();
+                return false;
+            }
+            if(document.mform.user_pw1.value != document.mform.user_pw2.value){
+                alert("비밀번호가 일치하지 않습니다.");
+                mform.user_pw2.focus();
+                return false;
+            }
+            document.mform.submit();
+        }
+    </script>
+</head>
+<body>
+    <iframe src="../head.jsp" id="bodyFrame" name="body" width="100%" frameborder="0"></iframe>
+    <div id="info_contents" class="contents">
+        <%-- 데이터베이스 연결 정보 --%>
+        <%@ page import="java.sql.*" %>
+        <%@ page import="javax.naming.*, javax.sql.*" %>
+        <%!
+            String db_username = "abraxas"; // 데이터베이스 사용자 이름
+            String db_password = "2076063678"; // 데이터베이스 비밀번호
+            String db_url = "jdbc:oracle:thin:@192.168.151.223:1521:source"; // 데이터베이스 URL
+        %>
+
+        <%
+            Connection conn = null;
+            PreparedStatement pstmt = null;
+            ResultSet rs = null;
+
+            try {
+                // 오라클 데이터베이스 연결
+                Class.forName("oracle.jdbc.driver.OracleDriver");
+                conn = DriverManager.getConnection(db_url, db_username, db_password);
+
+                // 로그인 확인
+                HttpSession session = request.getSession();
+                String id = (String) session.getAttribute("user_id");
+                if(id == null) {
+                    out.println("<script>alert('로그인 후 이용하세요!'); location.replace('member_login.jsp');</script>");
+                    return;
+                }
+
+                // 회원 정보 조회
+                String query = "SELECT * FROM member WHERE user_id = ?";
+                pstmt = conn.prepareStatement(query);
+                pstmt.setString(1, id);
+                rs = pstmt.executeQuery();
+
+                // 회원 정보 출력
+                if(rs.next()) {
+                    String user_id = rs.getString("user_id");
+                    String name = rs.getString("name");
+                    int age = rs.getInt("age");
+                    String nick = rs.getString("nick");
+                    String email = rs.getString("email");
+
+                    // HTML 폼에 회원 정보 채우기
+        %>
+                    <form name="mform" method="post" action="member_info_change.jsp">
+                        <table width="500" cellpadding="3" class="grayColor">
+                            <tr>
+                                <th colspan="2" style="background-color: #323232">
+                                    <font style="color: white; font-size: 150%;">회 원 정 보</font>
+                                </th>
+                            </tr>
+                            <tr>
+                                <th width="120px"><font>*ID</font></th>
+                                <td><%=user_id%></td>
+                            </tr>
+                            <tr>
+                                <th><font>*이름</font></th>
+                                <td><%=name%></td>
+                            </tr>
+                            <tr>
+                                <th><font>*비밀번호</font></th>
+                                <td>
+                                    <input type="password" name="user_pw1" size="20" maxlength="20">
+                                    &nbsp;<font style="color:red;">6~20(영문/숫자/특수문자)</font>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th><font>*비밀번호 확인</font></th>
+                                <td><input type="password" name="user_pw2" size="20" maxlength="20"></td>
+                            </tr>
+                            <tr>
+                                <th><font>나이</font></th>
+                                <td><input type="number" name="age" size="30" min="0" max="150" value="<%=age%>"></td>
+                            </tr>
+                            <tr>
+                                <th><font>닉네임</font></th>
+                                <td><input type="text" name="nick" size="30" maxlength="30" value="<%=nick%>"></td>
+                            </tr>
+                            <tr>
+                                <th><font>EMAIL</font></th>
+                                <td><input type="text" name="email" size="30" maxlength="30" value="<%=email%>"></td>
+                            </tr>
+                        </table>
+                        <p>
+                            <font size=2>* 는 필수 입력 항목입니다.</font><br/><br/>
+                            <input type="button" value="수정" onclick="ck();" class="btn_default btn_gray">
+                            <input type="reset" value="삭제" class="btn_default btn_gray">
+                        </p>
+                    </form>
+        <%
+                } else {
+                    out.println("<h5>회원 정보를 불러올 수 없습니다.</h5>");
+                }
+            } catch(Exception e) {
+                out.println("<h5>오류가 발생했습니다: " + e.getMessage() + "</h5>");
+            } finally {
+                // 자원 해제
+                if(rs != null) rs.close();
+                if(pstmt != null) pstmt.close();
+                if(conn != null) conn.close();
+            }
+        %>
+    </div>
+</body>
+</html>
+

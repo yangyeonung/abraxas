@@ -1,0 +1,15 @@
+@charset "utf-8";
+
+/** 전체 스타일 **/
+* { margin:0; padding:0;} /* 모든 태그 기본 margin/padding 0으로 초기화*/
+a { text-decoration: none;} /* a 태그 밑줄 없애기 */
+
+/** 상단 header 스타일 **/
+div#area_header { text-align:center;margin:10px;}
+div#area_header h1 { font-size:4em; color:#323232;}
+
+/** 중간 메뉴바 스타일 **/
+div#area_menu { height:28px; padding-top: 2px;background-color:#323232; text-align:center; color:white;}
+div#area_menu a { color:white;}
+div#area_menu a:hover { color:#FF8C00;}
+

@@ -1,0 +1,467 @@
+13-Apr-2024 18:08:27.664 정보 [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextInitialized()
+13-Apr-2024 18:08:27.664 정보 [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextInitialized()
+13-Apr-2024 18:08:27.665 정보 [main] org.apache.catalina.core.ApplicationContext.log ContextListener: attributeAdded('StockTicker', 'async.Stockticker@2ac9e53c')
+13-Apr-2024 18:26:45.887 정보 [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextDestroyed()
+13-Apr-2024 18:26:45.887 정보 [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextDestroyed()
+13-Apr-2024 18:26:48.919 정보 [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextInitialized()
+13-Apr-2024 18:26:48.919 정보 [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextInitialized()
+13-Apr-2024 18:26:48.923 정보 [main] org.apache.catalina.core.ApplicationContext.log ContextListener: attributeAdded('StockTicker', 'async.Stockticker@11c999da')
+13-Apr-2024 18:27:45.582 심각 [http-nio-8080-exec-2] org.apache.catalina.core.StandardWrapperValve.invoke 경로 []의 컨텍스트 내의 서블릿 [jsp]을(를) 위한 Servlet.service() 호출이, 근본 원인(root cause)과 함께, 예외 [JSP를 위한 클래스를 컴파일할 수 없습니다.: 
+
+JSP 파일 [/insertProc.jsp]의 [32] 행에서 오류가 발생했습니다.
+city_Name cannot be resolved to a variable
+29: String sql = "INSERT INTO sample (city_name, latitude, longitude) VALUES (?, ?, ?)";
+30: 
+31: pstmt = con.prepareStatement(sql);
+32: pstmt.setString(1, city_Name);
+33: pstmt.setDouble(2, Double.parseDouble(stLatitude));
+34: pstmt.setDouble(3, Double.parseDouble(stLongitude));
+35: 
+
+
+Stacktrace:]을(를) 발생시켰습니다.
+	org.apache.jasper.JasperException: JSP를 위한 클래스를 컴파일할 수 없습니다.: 
+
+JSP 파일 [/insertProc.jsp]의 [32] 행에서 오류가 발생했습니다.
+city_Name cannot be resolved to a variable
+29: String sql = "INSERT INTO sample (city_name, latitude, longitude) VALUES (?, ?, ?)";
+30: 
+31: pstmt = con.prepareStatement(sql);
+32: pstmt.setString(1, city_Name);
+33: pstmt.setDouble(2, Double.parseDouble(stLatitude));
+34: pstmt.setDouble(3, Double.parseDouble(stLongitude));
+35: 
+
+
+Stacktrace:
+		at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:102)
+		at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:214)
+		at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:524)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:402)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:372)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:356)
+		at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:603)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:396)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:380)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:328)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:206)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:175)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:673)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1736)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+		at java.base/java.lang.Thread.run(Thread.java:829)
+13-Apr-2024 18:29:05.129 정보 [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextDestroyed()
+13-Apr-2024 18:29:05.129 정보 [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextDestroyed()
+13-Apr-2024 18:29:07.951 정보 [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextInitialized()
+13-Apr-2024 18:29:07.953 정보 [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextInitialized()
+13-Apr-2024 18:29:07.955 정보 [main] org.apache.catalina.core.ApplicationContext.log ContextListener: attributeAdded('StockTicker', 'async.Stockticker@2ac9e53c')
+13-Apr-2024 18:29:11.504 심각 [http-nio-8080-exec-4] org.apache.catalina.core.StandardWrapperValve.invoke 경로 []의 컨텍스트 내의 서블릿 [jsp]을(를) 위한 Servlet.service() 호출이, 근본 원인(root cause)과 함께, 예외 [행 [36]에서 [/insertProc.jsp]을(를) 처리하는 중 예외 발생
+
+33: pstmt.setDouble(2, Double.parseDouble(stLatitude));
+34: pstmt.setDouble(3, Double.parseDouble(stLongitude));
+35: 
+36: pstmt.executeUpdate();
+37: pstmt.close();
+38: 
+39: con.close();
+
+
+Stacktrace:]을(를) 발생시켰습니다.
+	Error : 942, Position : 12, Sql = INSERT INTO sample (city_name, latitude, longitude) VALUES (:1 , :2 , :3 ), OriginalSql = INSERT INTO sample (city_name, latitude, longitude) VALUES (?, ?, ?), Error Msg = ORA-00942: 테이블 또는 뷰가 존재하지 않습니다
+
+		at oracle.jdbc.driver.T4CTTIoer11.processError(T4CTTIoer11.java:530)
+		at oracle.jdbc.driver.T4CTTIoer11.processError(T4CTTIoer11.java:462)
+		at oracle.jdbc.driver.T4C8Oall.processError(T4C8Oall.java:1104)
+		at oracle.jdbc.driver.T4CTTIfun.receive(T4CTTIfun.java:553)
+		at oracle.jdbc.driver.T4CTTIfun.doRPC(T4CTTIfun.java:269)
+		at oracle.jdbc.driver.T4C8Oall.doOALL(T4C8Oall.java:655)
+		at oracle.jdbc.driver.T4CPreparedStatement.doOall8(T4CPreparedStatement.java:270)
+		at oracle.jdbc.driver.T4CPreparedStatement.doOall8(T4CPreparedStatement.java:91)
+		at oracle.jdbc.driver.T4CPreparedStatement.executeForRows(T4CPreparedStatement.java:970)
+		at oracle.jdbc.driver.OracleStatement.doExecuteWithTimeout(OracleStatement.java:1213)
+		at oracle.jdbc.driver.OraclePreparedStatement.executeInternal(OraclePreparedStatement.java:3671)
+		at oracle.jdbc.driver.T4CPreparedStatement.executeInternal(T4CPreparedStatement.java:1426)
+		at oracle.jdbc.driver.OraclePreparedStatement.executeLargeUpdate(OraclePreparedStatement.java:3761)
+		at oracle.jdbc.driver.OraclePreparedStatement.executeUpdate(OraclePreparedStatement.java:3741)
+		at oracle.jdbc.driver.OraclePreparedStatementWrapper.executeUpdate(OraclePreparedStatementWrapper.java:1063)
+		at org.apache.jsp.insertProc_jsp._jspService(insertProc_jsp.java:157)
+		at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:70)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:456)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:380)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:328)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:206)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:175)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:673)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1736)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+		at java.base/java.lang.Thread.run(Thread.java:829)
+13-Apr-2024 18:35:06.390 정보 [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextDestroyed()
+13-Apr-2024 18:35:06.390 정보 [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextDestroyed()
+13-Apr-2024 18:35:09.240 정보 [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextInitialized()
+13-Apr-2024 18:35:09.241 정보 [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextInitialized()
+13-Apr-2024 18:35:09.242 정보 [main] org.apache.catalina.core.ApplicationContext.log ContextListener: attributeAdded('StockTicker', 'async.Stockticker@2ac9e53c')
+13-Apr-2024 18:35:15.930 심각 [http-nio-8080-exec-2] org.apache.catalina.core.StandardWrapperValve.invoke 경로 []의 컨텍스트 내의 서블릿 [jsp]을(를) 위한 Servlet.service() 호출이, 근본 원인(root cause)과 함께, 예외 [행 [43]에서 [/insertProc.jsp]을(를) 처리하는 중 예외 발생
+
+40: } else {
+41:     pstmt.setNull(3, Types.DOUBLE);
+42: }
+43: pstmt.executeUpdate();
+44: pstmt.close();
+45: 
+46: con.close();
+
+
+Stacktrace:]을(를) 발생시켰습니다.
+	Error : 942, Position : 12, Sql = INSERT INTO sample (city_name, latitude, longitude) VALUES (:1 , :2 , :3 ), OriginalSql = INSERT INTO sample (city_name, latitude, longitude) VALUES (?, ?, ?), Error Msg = ORA-00942: 테이블 또는 뷰가 존재하지 않습니다
+
+		at oracle.jdbc.driver.T4CTTIoer11.processError(T4CTTIoer11.java:530)
+		at oracle.jdbc.driver.T4CTTIoer11.processError(T4CTTIoer11.java:462)
+		at oracle.jdbc.driver.T4C8Oall.processError(T4C8Oall.java:1104)
+		at oracle.jdbc.driver.T4CTTIfun.receive(T4CTTIfun.java:553)
+		at oracle.jdbc.driver.T4CTTIfun.doRPC(T4CTTIfun.java:269)
+		at oracle.jdbc.driver.T4C8Oall.doOALL(T4C8Oall.java:655)
+		at oracle.jdbc.driver.T4CPreparedStatement.doOall8(T4CPreparedStatement.java:270)
+		at oracle.jdbc.driver.T4CPreparedStatement.doOall8(T4CPreparedStatement.java:91)
+		at oracle.jdbc.driver.T4CPreparedStatement.executeForRows(T4CPreparedStatement.java:970)
+		at oracle.jdbc.driver.OracleStatement.doExecuteWithTimeout(OracleStatement.java:1213)
+		at oracle.jdbc.driver.OraclePreparedStatement.executeInternal(OraclePreparedStatement.java:3671)
+		at oracle.jdbc.driver.T4CPreparedStatement.executeInternal(T4CPreparedStatement.java:1426)
+		at oracle.jdbc.driver.OraclePreparedStatement.executeLargeUpdate(OraclePreparedStatement.java:3761)
+		at oracle.jdbc.driver.OraclePreparedStatement.executeUpdate(OraclePreparedStatement.java:3741)
+		at oracle.jdbc.driver.OraclePreparedStatementWrapper.executeUpdate(OraclePreparedStatementWrapper.java:1063)
+		at org.apache.jsp.insertProc_jsp._jspService(insertProc_jsp.java:164)
+		at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:70)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:456)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:380)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:328)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:206)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:175)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:673)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1736)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+		at java.base/java.lang.Thread.run(Thread.java:829)
+13-Apr-2024 18:42:18.554 정보 [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextDestroyed()
+13-Apr-2024 18:42:18.555 정보 [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextDestroyed()
+13-Apr-2024 18:42:21.515 정보 [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextInitialized()
+13-Apr-2024 18:42:21.515 정보 [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextInitialized()
+13-Apr-2024 18:42:21.516 정보 [main] org.apache.catalina.core.ApplicationContext.log ContextListener: attributeAdded('StockTicker', 'async.Stockticker@69b1e8f8')
+13-Apr-2024 18:57:37.348 정보 [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextDestroyed()
+13-Apr-2024 18:57:37.348 정보 [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextDestroyed()
+13-Apr-2024 18:57:40.159 정보 [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextInitialized()
+13-Apr-2024 18:57:40.160 정보 [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextInitialized()
+13-Apr-2024 18:57:40.162 정보 [main] org.apache.catalina.core.ApplicationContext.log ContextListener: attributeAdded('StockTicker', 'async.Stockticker@2ac9e53c')
+13-Apr-2024 21:08:59.608 정보 [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextDestroyed()
+13-Apr-2024 21:08:59.609 정보 [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextDestroyed()
+13-Apr-2024 21:09:02.198 정보 [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextInitialized()
+13-Apr-2024 21:09:02.199 정보 [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextInitialized()
+13-Apr-2024 21:09:02.200 정보 [main] org.apache.catalina.core.ApplicationContext.log ContextListener: attributeAdded('StockTicker', 'async.Stockticker@2ac9e53c')
+13-Apr-2024 21:21:59.854 정보 [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextDestroyed()
+13-Apr-2024 21:21:59.854 정보 [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextDestroyed()
+13-Apr-2024 21:22:02.290 정보 [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextInitialized()
+13-Apr-2024 21:22:02.290 정보 [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextInitialized()
+13-Apr-2024 21:22:02.290 정보 [main] org.apache.catalina.core.ApplicationContext.log ContextListener: attributeAdded('StockTicker', 'async.Stockticker@2ac9e53c')
+13-Apr-2024 21:32:18.728 정보 [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextDestroyed()
+13-Apr-2024 21:32:18.728 정보 [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextDestroyed()
+13-Apr-2024 21:32:21.374 정보 [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextInitialized()
+13-Apr-2024 21:32:21.375 정보 [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextInitialized()
+13-Apr-2024 21:32:21.376 정보 [main] org.apache.catalina.core.ApplicationContext.log ContextListener: attributeAdded('StockTicker', 'async.Stockticker@4ac7856f')
+13-Apr-2024 21:36:36.267 정보 [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextDestroyed()
+13-Apr-2024 21:36:36.267 정보 [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextDestroyed()
+13-Apr-2024 21:36:38.666 정보 [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextInitialized()
+13-Apr-2024 21:36:38.667 정보 [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextInitialized()
+13-Apr-2024 21:36:38.668 정보 [main] org.apache.catalina.core.ApplicationContext.log ContextListener: attributeAdded('StockTicker', 'async.Stockticker@2ac9e53c')
+13-Apr-2024 21:50:31.016 정보 [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextDestroyed()
+13-Apr-2024 21:50:31.017 정보 [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextDestroyed()
+13-Apr-2024 21:50:33.652 정보 [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextInitialized()
+13-Apr-2024 21:50:33.652 정보 [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextInitialized()
+13-Apr-2024 21:50:33.660 정보 [main] org.apache.catalina.core.ApplicationContext.log ContextListener: attributeAdded('StockTicker', 'async.Stockticker@4ac7856f')
+13-Apr-2024 21:52:22.608 정보 [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextDestroyed()
+13-Apr-2024 21:52:22.608 정보 [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextDestroyed()
+13-Apr-2024 21:52:25.354 정보 [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextInitialized()
+13-Apr-2024 21:52:25.355 정보 [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextInitialized()
+13-Apr-2024 21:52:25.358 정보 [main] org.apache.catalina.core.ApplicationContext.log ContextListener: attributeAdded('StockTicker', 'async.Stockticker@2ac9e53c')
+13-Apr-2024 21:55:03.643 정보 [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextDestroyed()
+13-Apr-2024 21:55:03.643 정보 [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextDestroyed()
+13-Apr-2024 21:55:06.208 정보 [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextInitialized()
+13-Apr-2024 21:55:06.209 정보 [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextInitialized()
+13-Apr-2024 21:55:06.210 정보 [main] org.apache.catalina.core.ApplicationContext.log ContextListener: attributeAdded('StockTicker', 'async.Stockticker@2ac9e53c')
+13-Apr-2024 22:05:11.666 정보 [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextDestroyed()
+13-Apr-2024 22:05:11.666 정보 [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextDestroyed()
+13-Apr-2024 22:05:14.424 정보 [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextInitialized()
+13-Apr-2024 22:05:14.425 정보 [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextInitialized()
+13-Apr-2024 22:05:14.426 정보 [main] org.apache.catalina.core.ApplicationContext.log ContextListener: attributeAdded('StockTicker', 'async.Stockticker@2ac9e53c')
+13-Apr-2024 22:21:43.925 정보 [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextDestroyed()
+13-Apr-2024 22:21:43.925 정보 [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextDestroyed()
+13-Apr-2024 22:21:46.557 정보 [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextInitialized()
+13-Apr-2024 22:21:46.558 정보 [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextInitialized()
+13-Apr-2024 22:21:46.559 정보 [main] org.apache.catalina.core.ApplicationContext.log ContextListener: attributeAdded('StockTicker', 'async.Stockticker@2ac9e53c')
+13-Apr-2024 22:24:57.595 정보 [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextDestroyed()
+13-Apr-2024 22:24:57.595 정보 [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextDestroyed()
+13-Apr-2024 22:25:00.041 정보 [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextInitialized()
+13-Apr-2024 22:25:00.042 정보 [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextInitialized()
+13-Apr-2024 22:25:00.043 정보 [main] org.apache.catalina.core.ApplicationContext.log ContextListener: attributeAdded('StockTicker', 'async.Stockticker@2ac9e53c')
+13-Apr-2024 22:33:54.217 정보 [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextDestroyed()
+13-Apr-2024 22:33:54.217 정보 [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextDestroyed()
+13-Apr-2024 22:33:56.592 정보 [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextInitialized()
+13-Apr-2024 22:33:56.595 정보 [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextInitialized()
+13-Apr-2024 22:33:56.596 정보 [main] org.apache.catalina.core.ApplicationContext.log ContextListener: attributeAdded('StockTicker', 'async.Stockticker@4ac7856f')
+13-Apr-2024 22:37:06.259 정보 [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextDestroyed()
+13-Apr-2024 22:37:06.259 정보 [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextDestroyed()
+13-Apr-2024 22:37:08.936 정보 [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextInitialized()
+13-Apr-2024 22:37:08.936 정보 [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextInitialized()
+13-Apr-2024 22:37:08.937 정보 [main] org.apache.catalina.core.ApplicationContext.log ContextListener: attributeAdded('StockTicker', 'async.Stockticker@4ac7856f')
+13-Apr-2024 22:40:35.073 정보 [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextDestroyed()
+13-Apr-2024 22:40:35.073 정보 [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextDestroyed()
+13-Apr-2024 22:40:37.837 정보 [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextInitialized()
+13-Apr-2024 22:40:37.838 정보 [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextInitialized()
+13-Apr-2024 22:40:37.840 정보 [main] org.apache.catalina.core.ApplicationContext.log ContextListener: attributeAdded('StockTicker', 'async.Stockticker@4ac7856f')
+13-Apr-2024 22:41:40.085 정보 [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextDestroyed()
+13-Apr-2024 22:41:40.085 정보 [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextDestroyed()
+13-Apr-2024 22:41:42.915 정보 [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextInitialized()
+13-Apr-2024 22:41:42.916 정보 [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextInitialized()
+13-Apr-2024 22:41:42.916 정보 [main] org.apache.catalina.core.ApplicationContext.log ContextListener: attributeAdded('StockTicker', 'async.Stockticker@1e000a17')
+13-Apr-2024 22:51:15.265 정보 [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextDestroyed()
+13-Apr-2024 22:51:15.265 정보 [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextDestroyed()
+13-Apr-2024 22:51:18.057 정보 [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextInitialized()
+13-Apr-2024 22:51:18.058 정보 [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextInitialized()
+13-Apr-2024 22:51:18.059 정보 [main] org.apache.catalina.core.ApplicationContext.log ContextListener: attributeAdded('StockTicker', 'async.Stockticker@2ac9e53c')
+13-Apr-2024 22:51:20.900 심각 [http-nio-8080-exec-4] org.apache.catalina.core.StandardWrapperValve.invoke 경로 []의 컨텍스트 내의 서블릿 [jsp]을(를) 위한 Servlet.service() 호출이, 근본 원인(root cause)과 함께, 예외 [JSP를 위한 클래스를 컴파일할 수 없습니다.: 
+
+JSP 파일 [/head.jsp]의 [27] 행에서 오류가 발생했습니다.
+user_id cannot be resolved to a variable
+24: 		<div id="area_menu">
+25: 			<a href="insertForm.jsp" target="_parent">홈</a>
+26: 			| <a href="board/board_list.jsp" target="_parent">게시판</a>
+27: 		<% if(user_id == null || user_id.isEmpty()):%> // 로그인 안된 상태일 때 표시 메뉴	
+28: 			 | <a href="member/member_login.jsp" target="_parent">로그인</a>
+29: 			 | <a href="member/member_register.jsp" target="_parent">회원가입</a>
+30: 		<% else: %> // 로그인 된 상태일 때 표시 메뉴
+
+
+JSP 파일 [/head.jsp]의 [27] 행에서 오류가 발생했습니다.
+user_id cannot be resolved
+24: 		<div id="area_menu">
+25: 			<a href="insertForm.jsp" target="_parent">홈</a>
+26: 			| <a href="board/board_list.jsp" target="_parent">게시판</a>
+27: 		<% if(user_id == null || user_id.isEmpty()):%> // 로그인 안된 상태일 때 표시 메뉴	
+28: 			 | <a href="member/member_login.jsp" target="_parent">로그인</a>
+29: 			 | <a href="member/member_register.jsp" target="_parent">회원가입</a>
+30: 		<% else: %> // 로그인 된 상태일 때 표시 메뉴
+
+
+JSP 파일 [/head.jsp]의 [27] 행에서 오류가 발생했습니다.
+Syntax error on token ":", invalid Statement
+24: 		<div id="area_menu">
+25: 			<a href="insertForm.jsp" target="_parent">홈</a>
+26: 			| <a href="board/board_list.jsp" target="_parent">게시판</a>
+27: 		<% if(user_id == null || user_id.isEmpty()):%> // 로그인 안된 상태일 때 표시 메뉴	
+28: 			 | <a href="member/member_login.jsp" target="_parent">로그인</a>
+29: 			 | <a href="member/member_register.jsp" target="_parent">회원가입</a>
+30: 		<% else: %> // 로그인 된 상태일 때 표시 메뉴
+
+
+JSP 파일 [/head.jsp]의 [30] 행에서 오류가 발생했습니다.
+Syntax error on token "else", invalid Label
+27: 		<% if(user_id == null || user_id.isEmpty()):%> // 로그인 안된 상태일 때 표시 메뉴	
+28: 			 | <a href="member/member_login.jsp" target="_parent">로그인</a>
+29: 			 | <a href="member/member_register.jsp" target="_parent">회원가입</a>
+30: 		<% else: %> // 로그인 된 상태일 때 표시 메뉴
+31: 			 | <a href="member/member_info.jsp" target="_parent"><?=$_SESSION['nickname']?>님 정보</a>
+32: 			 | <a href="member/member_nick.jsp" target="_parent">닉네임수정</a>
+33: 			 | <a href="member/member_logout.jsp" target="_parent">로그아웃</a>
+
+
+JSP 파일 [/head.jsp]의 [34] 행에서 오류가 발생했습니다.
+Syntax error, insert "VariableDeclarators" to complete LocalVariableDeclaration
+31: 			 | <a href="member/member_info.jsp" target="_parent"><?=$_SESSION['nickname']?>님 정보</a>
+32: 			 | <a href="member/member_nick.jsp" target="_parent">닉네임수정</a>
+33: 			 | <a href="member/member_logout.jsp" target="_parent">로그아웃</a>
+34: 		<% endif; %>
+35: 		</div>
+36: 	</body>
+37: </html>
+
+
+Stacktrace:]을(를) 발생시켰습니다.
+	org.apache.jasper.JasperException: JSP를 위한 클래스를 컴파일할 수 없습니다.: 
+
+JSP 파일 [/head.jsp]의 [27] 행에서 오류가 발생했습니다.
+user_id cannot be resolved to a variable
+24: 		<div id="area_menu">
+25: 			<a href="insertForm.jsp" target="_parent">홈</a>
+26: 			| <a href="board/board_list.jsp" target="_parent">게시판</a>
+27: 		<% if(user_id == null || user_id.isEmpty()):%> // 로그인 안된 상태일 때 표시 메뉴	
+28: 			 | <a href="member/member_login.jsp" target="_parent">로그인</a>
+29: 			 | <a href="member/member_register.jsp" target="_parent">회원가입</a>
+30: 		<% else: %> // 로그인 된 상태일 때 표시 메뉴
+
+
+JSP 파일 [/head.jsp]의 [27] 행에서 오류가 발생했습니다.
+user_id cannot be resolved
+24: 		<div id="area_menu">
+25: 			<a href="insertForm.jsp" target="_parent">홈</a>
+26: 			| <a href="board/board_list.jsp" target="_parent">게시판</a>
+27: 		<% if(user_id == null || user_id.isEmpty()):%> // 로그인 안된 상태일 때 표시 메뉴	
+28: 			 | <a href="member/member_login.jsp" target="_parent">로그인</a>
+29: 			 | <a href="member/member_register.jsp" target="_parent">회원가입</a>
+30: 		<% else: %> // 로그인 된 상태일 때 표시 메뉴
+
+
+JSP 파일 [/head.jsp]의 [27] 행에서 오류가 발생했습니다.
+Syntax error on token ":", invalid Statement
+24: 		<div id="area_menu">
+25: 			<a href="insertForm.jsp" target="_parent">홈</a>
+26: 			| <a href="board/board_list.jsp" target="_parent">게시판</a>
+27: 		<% if(user_id == null || user_id.isEmpty()):%> // 로그인 안된 상태일 때 표시 메뉴	
+28: 			 | <a href="member/member_login.jsp" target="_parent">로그인</a>
+29: 			 | <a href="member/member_register.jsp" target="_parent">회원가입</a>
+30: 		<% else: %> // 로그인 된 상태일 때 표시 메뉴
+
+
+JSP 파일 [/head.jsp]의 [30] 행에서 오류가 발생했습니다.
+Syntax error on token "else", invalid Label
+27: 		<% if(user_id == null || user_id.isEmpty()):%> // 로그인 안된 상태일 때 표시 메뉴	
+28: 			 | <a href="member/member_login.jsp" target="_parent">로그인</a>
+29: 			 | <a href="member/member_register.jsp" target="_parent">회원가입</a>
+30: 		<% else: %> // 로그인 된 상태일 때 표시 메뉴
+31: 			 | <a href="member/member_info.jsp" target="_parent"><?=$_SESSION['nickname']?>님 정보</a>
+32: 			 | <a href="member/member_nick.jsp" target="_parent">닉네임수정</a>
+33: 			 | <a href="member/member_logout.jsp" target="_parent">로그아웃</a>
+
+
+JSP 파일 [/head.jsp]의 [34] 행에서 오류가 발생했습니다.
+Syntax error, insert "VariableDeclarators" to complete LocalVariableDeclaration
+31: 			 | <a href="member/member_info.jsp" target="_parent"><?=$_SESSION['nickname']?>님 정보</a>
+32: 			 | <a href="member/member_nick.jsp" target="_parent">닉네임수정</a>
+33: 			 | <a href="member/member_logout.jsp" target="_parent">로그아웃</a>
+34: 		<% endif; %>
+35: 		</div>
+36: 	</body>
+37: </html>
+
+
+Stacktrace:
+		at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:102)
+		at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:214)
+		at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:524)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:402)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:372)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:356)
+		at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:603)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:396)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:380)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:328)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:206)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:175)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:673)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1736)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+		at java.base/java.lang.Thread.run(Thread.java:829)
+13-Apr-2024 22:51:22.278 심각 [http-nio-8080-exec-6] org.apache.catalina.core.StandardWrapperValve.invoke 경로 []의 컨텍스트 내의 서블릿 [jsp]을(를) 위한 Servlet.service() 호출이, 근본 원인(root cause)과 함께, 예외 [org.apache.jasper.JasperException: java.lang.ClassNotFoundException: org.apache.jsp.head_jsp]을(를) 발생시켰습니다.
+	java.lang.ClassNotFoundException: org.apache.jsp.head_jsp
+		at java.base/java.net.URLClassLoader.findClass(URLClassLoader.java:476)
+		at org.apache.jasper.servlet.JasperLoader.loadClass(JasperLoader.java:129)
+		at org.apache.jasper.servlet.JasperLoader.loadClass(JasperLoader.java:58)
+		at org.apache.catalina.core.DefaultInstanceManager.newInstance(DefaultInstanceManager.java:151)
+		at org.apache.jasper.servlet.JspServletWrapper.getServlet(JspServletWrapper.java:189)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:410)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:380)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:328)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:206)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:175)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:673)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1736)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+		at java.base/java.lang.Thread.run(Thread.java:829)
+13-Apr-2024 22:53:26.057 정보 [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextDestroyed()
+13-Apr-2024 22:53:26.057 정보 [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextDestroyed()
+13-Apr-2024 22:53:28.755 정보 [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextInitialized()
+13-Apr-2024 22:53:28.755 정보 [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextInitialized()
+13-Apr-2024 22:53:28.756 정보 [main] org.apache.catalina.core.ApplicationContext.log ContextListener: attributeAdded('StockTicker', 'async.Stockticker@2ac9e53c')

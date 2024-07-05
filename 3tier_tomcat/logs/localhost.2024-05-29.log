@@ -1,0 +1,209 @@
+29-May-2024 01:52:34.248 정보 [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextInitialized()
+29-May-2024 01:52:34.248 정보 [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextInitialized()
+29-May-2024 01:52:34.249 정보 [main] org.apache.catalina.core.ApplicationContext.log ContextListener: attributeAdded('StockTicker', 'async.Stockticker@2ac9e53c')
+29-May-2024 02:11:11.556 정보 [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextDestroyed()
+29-May-2024 02:11:11.556 정보 [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextDestroyed()
+29-May-2024 02:11:14.279 정보 [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextInitialized()
+29-May-2024 02:11:14.281 정보 [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextInitialized()
+29-May-2024 02:11:14.282 정보 [main] org.apache.catalina.core.ApplicationContext.log ContextListener: attributeAdded('StockTicker', 'async.Stockticker@2ac9e53c')
+29-May-2024 16:07:53.273 정보 [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextInitialized()
+29-May-2024 16:07:53.274 정보 [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextInitialized()
+29-May-2024 16:07:53.274 정보 [main] org.apache.catalina.core.ApplicationContext.log ContextListener: attributeAdded('StockTicker', 'async.Stockticker@21ab919c')
+29-May-2024 16:20:42.547 정보 [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextDestroyed()
+29-May-2024 16:20:42.548 정보 [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextDestroyed()
+29-May-2024 16:20:45.319 정보 [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextInitialized()
+29-May-2024 16:20:45.320 정보 [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextInitialized()
+29-May-2024 16:20:45.320 정보 [main] org.apache.catalina.core.ApplicationContext.log ContextListener: attributeAdded('StockTicker', 'async.Stockticker@49ea13b6')
+29-May-2024 17:03:44.824 정보 [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextDestroyed()
+29-May-2024 17:03:44.825 정보 [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextDestroyed()
+29-May-2024 17:03:47.574 정보 [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextInitialized()
+29-May-2024 17:03:47.576 정보 [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextInitialized()
+29-May-2024 17:03:47.577 정보 [main] org.apache.catalina.core.ApplicationContext.log ContextListener: attributeAdded('StockTicker', 'async.Stockticker@47772462')
+29-May-2024 17:26:27.369 심각 [http-nio-8080-exec-3] org.apache.catalina.core.StandardWrapperValve.invoke 경로 []의 컨텍스트 내의 서블릿 [jsp]을(를) 위한 Servlet.service() 호출이, 근본 원인(root cause)과 함께, 예외 [JSP를 위한 클래스를 컴파일할 수 없습니다.: 
+
+JSP 파일 [/jdbc.jsp]의 [16] 행에서 오류가 발생했습니다.
+url cannot be resolved to a variable
+13:       Class.forName(driver);
+14: 
+15:       // MariaDB 계정 id, 비밀번호 입력
+16:       conn = DriverManager.getConnection(url, "user", "password");
+17: 
+18:       connect = true;
+19:       conn.close();
+
+
+Stacktrace:]을(를) 발생시켰습니다.
+	org.apache.jasper.JasperException: JSP를 위한 클래스를 컴파일할 수 없습니다.: 
+
+JSP 파일 [/jdbc.jsp]의 [16] 행에서 오류가 발생했습니다.
+url cannot be resolved to a variable
+13:       Class.forName(driver);
+14: 
+15:       // MariaDB 계정 id, 비밀번호 입력
+16:       conn = DriverManager.getConnection(url, "user", "password");
+17: 
+18:       connect = true;
+19:       conn.close();
+
+
+Stacktrace:
+		at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:102)
+		at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:214)
+		at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:524)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:402)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:372)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:356)
+		at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:603)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:396)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:380)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:328)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:206)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:175)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:673)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1736)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+		at java.base/java.lang.Thread.run(Thread.java:829)
+29-May-2024 17:27:12.162 심각 [http-nio-8080-exec-5] org.apache.catalina.core.StandardWrapperValve.invoke 경로 []의 컨텍스트 내의 서블릿 [jsp]을(를) 위한 Servlet.service() 호출이, 근본 원인(root cause)과 함께, 예외 [JSP를 위한 클래스를 컴파일할 수 없습니다.: 
+
+JSP 파일 [/jdbc.jsp]의 [16] 행에서 오류가 발생했습니다.
+url cannot be resolved to a variable
+13:       Class.forName(driver);
+14: 
+15:       // MariaDB 계정 id, 비밀번호 입력
+16:       conn = DriverManager.getConnection(url, "root", "P@ssw0rd");
+17: 
+18:       connect = true;
+19:       conn.close();
+
+
+Stacktrace:]을(를) 발생시켰습니다.
+	org.apache.jasper.JasperException: JSP를 위한 클래스를 컴파일할 수 없습니다.: 
+
+JSP 파일 [/jdbc.jsp]의 [16] 행에서 오류가 발생했습니다.
+url cannot be resolved to a variable
+13:       Class.forName(driver);
+14: 
+15:       // MariaDB 계정 id, 비밀번호 입력
+16:       conn = DriverManager.getConnection(url, "root", "P@ssw0rd");
+17: 
+18:       connect = true;
+19:       conn.close();
+
+
+Stacktrace:
+		at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:102)
+		at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:214)
+		at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:524)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:402)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:372)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:356)
+		at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:603)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:396)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:380)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:328)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:206)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:175)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:673)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1736)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+		at java.base/java.lang.Thread.run(Thread.java:829)
+29-May-2024 17:27:18.839 정보 [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextDestroyed()
+29-May-2024 17:27:18.840 정보 [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextDestroyed()
+29-May-2024 17:27:21.263 정보 [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextInitialized()
+29-May-2024 17:27:21.264 정보 [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextInitialized()
+29-May-2024 17:27:21.265 정보 [main] org.apache.catalina.core.ApplicationContext.log ContextListener: attributeAdded('StockTicker', 'async.Stockticker@47772462')
+29-May-2024 17:27:22.228 심각 [http-nio-8080-exec-1] org.apache.catalina.core.StandardWrapperValve.invoke 경로 []의 컨텍스트 내의 서블릿 [jsp]을(를) 위한 Servlet.service() 호출이, 근본 원인(root cause)과 함께, 예외 [JSP를 위한 클래스를 컴파일할 수 없습니다.: 
+
+JSP 파일 [/jdbc.jsp]의 [16] 행에서 오류가 발생했습니다.
+url cannot be resolved to a variable
+13:       Class.forName(driver);
+14: 
+15:       // MariaDB 계정 id, 비밀번호 입력
+16:       conn = DriverManager.getConnection(url, "root", "P@ssw0rd");
+17: 
+18:       connect = true;
+19:       conn.close();
+
+
+Stacktrace:]을(를) 발생시켰습니다.
+	org.apache.jasper.JasperException: JSP를 위한 클래스를 컴파일할 수 없습니다.: 
+
+JSP 파일 [/jdbc.jsp]의 [16] 행에서 오류가 발생했습니다.
+url cannot be resolved to a variable
+13:       Class.forName(driver);
+14: 
+15:       // MariaDB 계정 id, 비밀번호 입력
+16:       conn = DriverManager.getConnection(url, "root", "P@ssw0rd");
+17: 
+18:       connect = true;
+19:       conn.close();
+
+
+Stacktrace:
+		at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:102)
+		at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:214)
+		at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:524)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:402)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:372)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:356)
+		at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:603)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:396)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:380)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:328)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:206)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:175)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:673)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1736)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+		at java.base/java.lang.Thread.run(Thread.java:829)

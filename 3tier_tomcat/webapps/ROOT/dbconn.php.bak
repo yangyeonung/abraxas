@@ -1,0 +1,18 @@
+<?php
+    // 오라클 데이터베이스 연결 정보
+    $db_username = "abraxas";  // 데이터베이스 사용자 이름
+    $db_password = "2076063678";    // 데이터베이스 비밀번호
+    $db_hostname = "192.168.151.223";  // 호스트 이름
+    $db_port = "1521";        // 포트 번호
+    $db_service_name = "orcl"; // 서비스 이름
+    
+    // 오라클 데이터베이스 연결
+    $conn = oci_connect($db_username, $db_password, "(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=".$db_hostname.")(PORT=".$db_port.")))(CONNECT_DATA=(SERVICE_NAME=".$db_service_name.")))");
+    
+    // 연결 실패 시 오류 메시지 출력
+    if (!$conn) {
+        $e = oci_error();
+        trigger_error(htmlentities($e['message'], ENT_QUOTES), E_USER_ERROR);
+    }
+?>
+
